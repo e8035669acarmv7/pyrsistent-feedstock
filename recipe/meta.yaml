@@ -1,4 +1,4 @@
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: pyrsistent
@@ -6,30 +6,28 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyrsistent/pyrsistent-{{ version }}.tar.gz
-  sha256: 28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3
+  sha256: 8690178e75460d3afe32d6222feed1ca1fdd4ef7317f6d8b42147bcce5f9ee75
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - pip
     - python
-    - six
-    - pytest-runner
+    - pip
   run:
     - python
-    - six
 
 test:
   imports:
     - pyrsistent
+  commands:
+    - pip check
   requires:
-    - hypothesis
-    - pytest
+    - pip
 
 about:
   home: http://github.com/tobgu/pyrsistent/
