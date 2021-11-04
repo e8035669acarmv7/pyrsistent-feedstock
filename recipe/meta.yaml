@@ -1,4 +1,4 @@
-{% set version = "0.17.3" %}
+{% set version = "0.18.0" %}
 
 package:
   name: pyrsistent
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyrsistent/pyrsistent-{{ version }}.tar.gz
-  sha256: 2e636185d9eb976a18a8a8e96efce62f2905fea90041958d8cc2a189756ebf3e
+  sha256: 773c781216f8c2900b42a7b638d5b517bb134ae1acbebe4d1e8f1f41ea60eb4b
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
